@@ -1,0 +1,241 @@
+/* Apply border-box box-sizing globally */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0 20px; /* Adds padding on left and right */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* HTML */
+html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    background-color: tan;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    align-items: center;
+    padding: 0 20px; /* Padding on left and right */
+    margin: 0; /* Remove margin */
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+nav a:hover{
+    color: brown;
+}
+/* Form Container */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 10px auto;
+    border-radius: 5px;
+    width: 100%;
+    background-color: wheat;
+    padding: 10px;
+}
+
+/* Input */
+.form-input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Lookup Button */
+#lookup-btn {
+    margin-top: 10px;
+    padding: 8px 40px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+/* Postal Data Container */
+.cards-container {
+    margin: 5px auto; /* Center the containers */
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center; /* Ensure proper alignment */
+    border-radius: 5px;
+    background-color: white;
+    max-width: 100%; /* Prevent overflow */
+}
+
+.cards-container {
+    margin: 5px 30px;
+}
+
+/* Postal Card */
+.postal-card {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 350px; /* Fixed max-width */
+    min-width: 280px; /* Ensure cards don't shrink too much */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: wheat;
+    margin: 10px 0; /* Maintain spacing */
+}
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 10px auto;
+    border-radius: 5px;
+    width: 100%;
+    background-color: wheat;
+    padding: 10px;
+}
+
+/* Header */
+.header {
+    margin-top: 10px;
+    width: 100%;
+    padding: 0.5px 10px;
+    background-color: rgb(177, 125, 57);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 100%; /* Prevent overflow */
+}
+.header h3, p, input{
+    padding: 0;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    
+}
+
+.filter-input{
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Ensure cards are displayed in one row */
+@media (min-width: 480px) {
+    .cards-container {
+        justify-content: space-evenly;
+    }
+
+    .postal-card {
+        flex-basis: calc(33.33% - 20px);
+    }
+}
+
+/* For smaller screens, keep cards in one row with flex */
+@media (max-width: 768px) {
+    .postal-card {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+/* For mobile screens, cards take full width */
+@media (max-width: 480px) {
+    .postal-card {
+        flex-basis: 100%;
+    }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    nav {
+        gap: 20px;
+    }
+
+    .header {
+        font-size: 16px;
+    }
+
+    .form-container {
+        max-width: 80%;
+    }
+
+    .postal-data-container {
+        gap: 20px;
+    }
+
+    .postal-card {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .form-container {
+        max-width: 90%;
+    }
+
+    .postal-data-container {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .postal-card {
+        width: 100%;
+    }
+
+    .header {
+        font-size: 14px;
+    }
+
+    #lookup-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        font-size: 14px;
+    }
+
+    #lookup-btn {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .form-container {
+        margin: 10px;
+    }
+}
